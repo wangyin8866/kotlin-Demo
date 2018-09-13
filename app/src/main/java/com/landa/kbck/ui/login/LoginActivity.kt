@@ -89,7 +89,6 @@ class LoginActivity : BaseActivity<LoginPresenter, LoginView>(), LoginView {
                 if (TextUtils.isEmpty(phone) || !WyUtils.checkPhone(phone)) {
                     ToastUtils.showShort(R.string.login_tip_phone_regex)
                 } else {
-                    //todo 发送短信
                     mPresenter.sendSms(phone, login_tv_sms, getString(R.string.login_tip_sms_rest), getString(R.string.login_tip_sms_tip))
                 }
 

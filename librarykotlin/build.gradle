@@ -2,13 +2,13 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 android {
-    compileSdkVersion 28
+    compileSdkVersion 27
 
 
 
     defaultConfig {
         minSdkVersion 15
-        targetSdkVersion 28
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
 
@@ -46,7 +46,11 @@ dependencies {
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.1'
     // Optional, if you use support library fragments:
     debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.1'
-
+    //support
+    api 'com.android.support:design:27.1.1'
+    api 'com.android.support:recyclerview-v7:27.1.1'
+    api 'com.android.support:support-v4:27.1.1'
+    api 'com.android.support:appcompat-v7:27.1.1'
     //RxBinding
     api 'com.jakewharton.rxbinding2:rxbinding-kotlin:2.1.1'
     api 'com.jakewharton.rxbinding2:rxbinding-support-v4-kotlin:2.1.1'
@@ -79,8 +83,9 @@ dependencies {
     api 'com.gyf.immersionbar:immersionbar:2.3.1'
     api 'com.github.tbruyelle:rxpermissions:0.10.2'
     api 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+
     //arouter
     api 'com.alibaba:arouter-api:1.4.0'
-//umeng
+    //umeng
     api 'com.umeng.analytics:analytics:6.1.4'
 }

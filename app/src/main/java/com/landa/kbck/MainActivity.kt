@@ -1,12 +1,9 @@
 package com.landa.kbck
 
 import android.os.Bundle
+import android.support.design.widget.BottomNavigationView
 import android.view.KeyEvent
-import android.view.View
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.landa.library.base.BaseActivity
-import com.landa.library.base.BasePresenter
-import com.landa.library.base.BaseView
 import com.landa.kbck.config.Constant
 import com.landa.kbck.ui.bill.BillFragment
 import com.landa.kbck.ui.home.HomeFragment
@@ -14,7 +11,11 @@ import com.landa.kbck.ui.my.MyFragment
 import com.landa.kbck.ui.payroll.PayrollFragment
 import com.landa.kbck.ui.shopping.ShoppingFragment
 import com.landa.kbck.utils.WyUtils
-import kotlinx.android.synthetic.main.public_bottom_main.*
+import com.landa.kbck.widget.BottomNavigationViewHelper
+import com.landa.library.base.BaseActivity
+import com.landa.library.base.BasePresenter
+import com.landa.library.base.BaseView
+import kotlinx.android.synthetic.main.activity_main.*
 import me.yokeyword.fragmentation.ISupportFragment
 
 /**
@@ -24,11 +25,19 @@ import me.yokeyword.fragmentation.ISupportFragment
  */
 @Route(path = Constant.ROUTER_ACTIVITY_MAIN)
 class MainActivity : BaseActivity<BasePresenter<BaseView>, BaseView>() {
+
+
     private val BOTTOM_INDEX: String = "bottom_index"
     private val mFragments = arrayOfNulls<ISupportFragment>(5)
 
     private var currentPage: Int = 0
     override fun initView() {
+        bottom_navigation.run {
+            setOnNavigationItemSelectedListener(onNavigationItemReselectedListener)
+            BottomNavigationViewHelper.disableShiftMode(this)
+            itemIconTintList = null
+            selectedItemId = this.menu.getItem(0).itemId
+        }
         val homeFragment: ISupportFragment? = findFragment(HomeFragment::class.java)
         if (homeFragment == null) {
             mFragments[0] = HomeFragment.getInstance()
@@ -45,17 +54,46 @@ class MainActivity : BaseActivity<BasePresenter<BaseView>, BaseView>() {
             mFragments[4] = findFragment(MyFragment::class.java)
 
         }
-        setTabSelection(currentPage)
-
-
-        id_tab_ll_01.run { setOnClickListener(onClickListener) }
-        id_tab_ll_02.run { setOnClickListener(onClickListener) }
-        id_tab_ll_03.run { setOnClickListener(onClickListener) }
-        id_tab_ll_04.run { setOnClickListener(onClickListener) }
-        id_tab_ll_05.run { setOnClickListener(onClickListener) }
 
     }
 
+    private val onNavigationItemReselectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        resetToDefaultIcon()//重置到默认不选中图片
+        when (item.itemId) {
+            R.id.menu_tab1 -> {
+                item.setIcon(R.drawable.tab_home_select)
+                showHideFragment(mFragments[0], mFragments[currentPage])
+                currentPage = 0
+            }
+            R.id.menu_tab2 -> {
+                showHideFragment(mFragments[1], mFragments[currentPage])
+                item.setIcon(R.drawable.tab_shopping_select)
+                currentPage = 1
+            }
+            R.id.menu_tab3 -> {
+                showHideFragment(mFragments[2], mFragments[currentPage])
+                item.setIcon(R.drawable.tab_payroll_select)
+                currentPage = 2
+            }
+            R.id.menu_tab4 -> {
+                showHideFragment(mFragments[3], mFragments[currentPage])
+                item.setIcon(R.drawable.tab_bill_select)
+                currentPage = 3
+            }
+        }
+        true
+    }
+
+    private fun resetToDefaultIcon() {
+        val item1 = bottom_navigation.menu.findItem(R.id.menu_tab1)
+        item1.setIcon(R.drawable.tab_home)
+        val item2 = bottom_navigation.menu.findItem(R.id.menu_tab2)
+        item2.setIcon(R.drawable.tab_shopping)
+        val item3 = bottom_navigation.menu.findItem(R.id.menu_tab3)
+        item3.setIcon(R.drawable.tab_payroll)
+        val item4 = bottom_navigation.menu.findItem(R.id.menu_tab4)
+        item4.setIcon(R.drawable.tab_bill)
+    }
 
     override fun createPresenter(): BasePresenter<BaseView> {
         return BasePresenter(mContext)
@@ -77,73 +115,9 @@ class MainActivity : BaseActivity<BasePresenter<BaseView>, BaseView>() {
         }
     }
 
-    private fun setTabSelection(currentPage: Int) {
-        //选中前清除状态
-        restView()
-
-        when (currentPage) {
-            0 -> {
-                id_tab_iv_01.setImageResource(R.drawable.tab_home_select)
-            }
-            1 -> {
-                id_tab_iv_02.setImageResource(R.drawable.tab_shopping_select)
-            }
-            2 -> {
-                id_tab_iv_03.setImageResource(R.drawable.tab_payroll_select)
-            }
-            3 -> {
-                id_tab_iv_04.setImageResource(R.drawable.tab_bill_select)
-            }
-            4 -> {
-                id_tab_iv_05.setImageResource(R.drawable.tab_me_select)
-            }
-        }
-    }
-
-    private fun restView() {
-        id_tab_iv_01.setImageResource(R.drawable.tab_home)
-        id_tab_iv_02.setImageResource(R.drawable.tab_shopping)
-        id_tab_iv_03.setImageResource(R.drawable.tab_payroll)
-        id_tab_iv_04.setImageResource(R.drawable.tab_bill)
-        id_tab_iv_05.setImageResource(R.drawable.tab_me)
-    }
-
-    private val onClickListener: View.OnClickListener = View.OnClickListener {
-        return@OnClickListener when (it.id) {
-            R.id.id_tab_ll_01 -> {
-                showHideFragment(mFragments[0], mFragments[currentPage])
-                currentPage = 0
-                setTabSelection(currentPage)
-            }
-            R.id.id_tab_ll_02 -> {
-                showHideFragment(mFragments[1], mFragments[currentPage])
-                currentPage = 1
-                setTabSelection(currentPage)
-            }
-            R.id.id_tab_ll_03 -> {
-                showHideFragment(mFragments[2], mFragments[currentPage])
-                currentPage = 2
-                setTabSelection(currentPage)
-            }
-            R.id.id_tab_ll_04 -> {
-                showHideFragment(mFragments[3], mFragments[currentPage])
-                currentPage = 3
-                setTabSelection(currentPage)
-            }
-            R.id.id_tab_ll_05 -> {
-                showHideFragment(mFragments[4], mFragments[currentPage])
-                currentPage = 4
-                setTabSelection(currentPage)
-            }
-            else -> {
-                setTabSelection(currentPage)
-            }
-
-        }
-    }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
 
-        return WyUtils.clickBack(keyCode, event,mContext)
+        return WyUtils.clickBack(keyCode, event, mContext)
     }
 }

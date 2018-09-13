@@ -1,19 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <FrameLayout
             android:id="@+id/layout_fragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1" />
-        <include layout="@layout/public_bottom_main" />
 
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            style="@style/Widget.Design.BottomNavigationView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/white"
+            app:itemTextColor="@color/color_state_menu_navi"
+            app:menu="@menu/bottom_navigation_main" />
     </LinearLayout>
+
+
 </android.support.design.widget.CoordinatorLayout>
