@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:background="@drawable/bg_update_all"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="180dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_version"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dialog_update_version_name"
+                    android:textColor="#ff1f1f1f"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_update_version"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="V1.0.0"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="#ff1f1f1f"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/tv_update_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="黄河水电费胜多负少的发生大幅度发生的范德萨是的法师打发斯蒂芬"
+                    android:lineSpacingExtra="10dp"
+                    android:textColor="#ff59595a"
+                    android:textSize="12sp" />
+            </ScrollView>
+        </LinearLayout>
+
+
+
+        <Button
+            android:id="@+id/tv_update"
+            android:layout_width="214dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:background="@drawable/btn_common_gradient"
+            android:text="@string/dialog_version_btn_txt"
+            android:textColor="#ff1d0f00"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/dialog_version_iv_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/but_close" />
+</LinearLayout>

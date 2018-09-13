@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipeRefreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color">
+
+
+    <android.support.constraint.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.youth.banner.Banner
+            android:id="@+id/home_banner"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:banner_default_image="@drawable/banner_one"
+            app:image_scale_type="fit_xy"
+            app:indicator_drawable_selected="@drawable/icon_yuan_h"
+            app:indicator_drawable_unselected="@drawable/icon_yuan_w"
+            app:layout_constraintDimensionRatio="H,16:10"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/home_cl_tab"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            app:layout_constraintDimensionRatio="H,16:4"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/home_banner">
+
+            <LinearLayout
+                android:id="@+id/home_tab_1"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/home_tab_2"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/but_sign" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/home_tan_1"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/home_tab_2"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/home_tab_1"
+                app:layout_constraintRight_toLeftOf="@+id/home_tab_3"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/but_jingdong" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/home_tab_2"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/home_tab_3"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/home_tab_2"
+                app:layout_constraintRight_toLeftOf="@id/home_tab_4"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/but_meituan" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/home_tab_3"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/home_tab_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/home_tab_3"
+                app:layout_constraintRight_toRightOf="@id/home_tab_5"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/but_phone" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/home_tab_4"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/home_tab_5"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/home_tab_4"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/but_more" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/home_tab_5"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/home_cl_content"
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_quota"
+            android:paddingEnd="39dp"
+            android:paddingLeft="44dp"
+            android:paddingRight="39dp"
+            android:paddingStart="44dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/home_cl_tab">
+
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="@string/home_tv_my"
+                android:textColor="@color/text_default_color"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/home_tv_money_flag"
+                android:textColor="@color/text_default_color"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+            <TextView
+                android:id="@+id/home_tv_my_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/home_tv_my_amount"
+                android:textColor="@color/text_default_color"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@+id/tv2"
+                app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+            <TextView
+                android:id="@+id/tv3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_tv_add"
+                android:textColor="@color/text_default_color"
+                android:textSize="10sp"
+                app:layout_constraintTop_toBottomOf="@+id/home_tv_my_amount" />
+
+            <TextView
+                android:id="@+id/home_tv_add_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_tv_add_amount"
+                android:textColor="@color/text_default_color"
+                android:textSize="10sp"
+                app:layout_constraintLeft_toRightOf="@+id/tv3"
+                app:layout_constraintTop_toBottomOf="@+id/home_tv_my_amount" />
+
+            <TextView
+                android:id="@+id/home_btn_get_amount"
+                android:layout_width="92dp"
+                android:layout_height="28dp"
+                android:gravity="center"
+                android:background="@drawable/btn_common_gradient"
+                android:text="@string/home_tv_get_amount"
+                android:textColor="@color/text_btn_default_color"
+
+                android:textSize="12sp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv1" />
+
+            <TextView
+                android:id="@+id/home_btn_withdraw"
+                android:layout_width="92dp"
+                android:layout_height="28dp"
+                android:gravity="center"
+                android:background="@drawable/btn_common_gradient"
+                android:text="@string/home_tv_withdraw"
+                android:textColor="@color/text_btn_default_color"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/home_tv_add_amount"
+                app:layout_constraintRight_toRightOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_service"
+            app:layout_constraintBottom_toBottomOf="@+id/home_cl_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/home_cl_content" />
+    </android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.SwipeRefreshLayout>

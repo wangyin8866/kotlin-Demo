@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="tv_navigate">#FF929292</color>
+    <color name="tv_navigate_checked">#FFF5A623</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="bg_color">#F8F8F9</color>
+    <color name="btn_checked_front">#FFDF00</color>
+    <color name="btn_checked_back">#FFCD00</color>
+    <color name="btn_front">#FEF6B4</color>
+    <color name="btn_back">#FFF0B8</color>
+    <color name="btn_pressed">#f1d25e</color>
+    <color name="text_default_color">#303030</color>
+    <color name="text_btn_default_color">#1D0F00</color>
+    <color name="text_tip_default_color">#D6D6D6</color>
+
+    <color name="text_title_color">#303030</color>
+    <color name="text_special_color">#FFCD00</color>
+    <color name="split_line_color">#F2F2F2</color>
+</resources>

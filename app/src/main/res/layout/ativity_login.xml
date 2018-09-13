@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="@color/bg_color">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="246dp"
+        android:background="@drawable/bg_gradient_common">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_logo_login"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginTop="190dp"
+        android:background="@drawable/login_bg_write_gradient"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingTop="40dp">
+
+        <EditText
+            android:id="@+id/login_et_phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="@string/login_tip_phone"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:textColorHint="#D6D6D6"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <View
+            android:id="@+id/login_line_1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/split_line_color"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_et_phone" />
+
+        <EditText
+            android:id="@+id/login_et_emsCode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="37dp"
+            android:background="@null"
+            android:hint="@string/login_tip_sms"
+            android:inputType="number"
+            android:maxLength="6"
+            android:textColorHint="#D6D6D6"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/login_tv_sms"
+            app:layout_constraintTop_toBottomOf="@+id/login_line_1" />
+
+        <TextView
+            android:id="@+id/login_tv_sms"
+            android:layout_width="73dp"
+            android:layout_height="24dp"
+            android:background="@drawable/tv_sms"
+            android:gravity="center"
+            android:text="@string/login_tv_sms"
+            android:textColor="#ffffcd00"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/login_et_emsCode"
+            app:layout_constraintLeft_toRightOf="@+id/login_et_emsCode"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <View
+            android:id="@+id/login_line_2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/split_line_color"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_et_emsCode" />
+
+        <TextView
+            android:id="@+id/login_btn_login"
+            android:layout_width="0dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="37dp"
+            android:background="@drawable/btn_common_gradient"
+            android:gravity="center"
+            android:text="@string/login_btn_login"
+            android:textColor="#ff1d0f00"
+            android:textSize="15sp"
+            android:enabled="false"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_line_2" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_btn_login">
+
+            <CheckBox
+                android:id="@+id/login_cb"
+
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:background="@drawable/register_cbx_selector"
+                android:button="@color/transparent"
+                android:checked="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_txt_agree"
+                android:layout_marginLeft="5dp"
+                android:textColor="#ff2e2e2e"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/login_tv_protocol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/login_txt_agree_protocol"
+                android:textColor="#ffffcd00"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</FrameLayout>
